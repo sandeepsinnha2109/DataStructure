@@ -1,5 +1,6 @@
 package com.linkedList;
 
+
 public class List {
     Node head;
     public void add(int data){
@@ -19,6 +20,15 @@ public class List {
         if(current.next==null){
             System.out.println(current.data+" ");
         }
+    }
+    
+    public int count() {
+    	Node current =head;
+    	int count=0;
+    	while(current!=null) {
+    		current=current.next;
+    		count++;
+    	}
     }
 
 }
