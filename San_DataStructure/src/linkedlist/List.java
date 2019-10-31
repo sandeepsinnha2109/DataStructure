@@ -3,6 +3,10 @@ package linkedlist;
 public class List {
 
 	Node head;
+	/**
+	 * Add the elemt in the list
+	 * @param data
+	 */
 	public void add(int data) {
 		
 		if(head==null) {
@@ -16,7 +20,7 @@ public class List {
 		}
 	}
 	/**
-	 * iterate till end
+	 * iterate till end and print the element in the list
 	 */
 	public void print() {
 		Node current=head;
@@ -26,7 +30,10 @@ public class List {
 		}
 		
 	}
-	
+	/**
+	 * Count number of nodes
+	 * @return
+	 */
 	public int count() {
 		int count=0;
 		Node current=head;
