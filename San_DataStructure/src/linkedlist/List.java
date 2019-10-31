@@ -39,4 +39,27 @@ public class List {
 		}
 		return count;
 	}
+	//insert at any position in the list
+	public void insertAtPosition(int pos,int data) {
+		int count=count();
+		Node current=head;
+		if(count==0 && pos==1) {
+			head=new Node(data);
+		}else if(pos>count+1) {
+			System.out.println("Invalid position");
+		}else if(pos==1) {
+			Node node =new Node(data);
+			node.next=head;
+			head=node;
+		}
+		else {
+			for(int i=1;i<pos-1;i++) {
+				current=current.next;
+			}
+			Node node =new Node(data);
+			node.next=current.next;
+			current.next=node;
+		}
+	}
+	
 }
