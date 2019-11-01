@@ -1,5 +1,9 @@
 package linkedlist;
-
+/**
+ * Main Class for Calling List
+ * @author sandeep sinha
+ *
+ */
 public class Main {
 public static void main(String[] args) {
 	List l=new List();
@@ -13,7 +17,7 @@ public static void main(String[] args) {
 	System.out.println("Node count ==> "+l.count());
 	//l.insertAtPosition(1, 23);
 	System.out.println("\n ");
-	//l.deleteAtPosition(3);//for Deleting elemnt
+	//l.deleteAtPosition(3);//for Deleting element
 	//l.print();
 	l.getMiddleElement();//For finding middle element
 	
