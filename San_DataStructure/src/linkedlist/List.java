@@ -27,6 +27,7 @@ public class List {
 		while(current!=null) {
 			System.out.print(current.data+" ");
 			current=current.next;
+			//System.out.print(current.data+" ");
 		}
 		
 	}
@@ -66,6 +67,29 @@ public class List {
 			Node node =new Node(data);
 			node.next=current.next;
 			current.next=node;
+		}
+	}
+	
+	/**
+	 * Delete particular position
+	 */
+	public void deleteAtPosition(int pos) {
+		int count=count();
+
+		if(head==null) {
+			System.out.println("Invalid");
+		}else if(pos==0) {
+			System.out.println("Invalid");
+		}else if (pos>count) {
+			System.out.println("Position cannot be greater than count");
+		}else {
+			Node current =head;
+			for(int i=1;i<pos-1;i++) {
+				current=current.next;
+			}
+			Node temp=current.next;
+			current.next=temp.next;
+			temp.next=null;
 		}
 	}
 	
