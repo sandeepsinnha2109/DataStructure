@@ -97,6 +97,7 @@ public class List {
 		}
 	}
 	
+	
 	/**
 	 * 6. Get Middle Element
 	 */
@@ -115,5 +116,60 @@ public class List {
 			System.out.println(slow.data);
 		}
 	}
+	
+	/**
+	 * 7.get the count of particular Node 
+	 */
+	
+	public int count(Node node) {
+		 int count=0;
+		Node current=head;
+		while(current!=null) {
+			count++;
+			current=current.next;
+		}
+		return count;
+		
+	}
+	/**
+	 * Finding the the intersection point of two linked list
+	 * @param node1
+	 * @param node2
+	 */
+	public void getIntersectionPoint(Node node1,Node node2){
+	
+	//1.Finding the count
+	int node1Count=count(node1);	
+	int node2Count=count(node2);
+	int diff=0;
+	//2. Finding the difference
+	if(node1Count>node2Count) {
+		diff=node1Count-node2Count;
+	}else if(node1Count<node2Count){
+		diff=node2Count-node1Count;
+	}
+	Node current1=head;
+	Node current2=head;
+	//3.move onwards the difference
+	for(int i=0;i<diff;i++) {
+		current1=current1.next;
+	}
+	while(current1!=null && current2!=null) {
+		if(current1.data==current2.data) {
+			System.out.println("Intersection point ==> "+current1.data);
+		}
+		current1=current1.next;
+		current2=current2.next;
+	}
+		System.out.println("Intersection point not found");
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 }
