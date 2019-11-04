@@ -121,7 +121,7 @@ public class List {
 	 * 7.get the count of particular Node 
 	 */
 	
-	public int count(Node node) {
+	public int count(Node head) {
 		 int count=0;
 		Node current=head;
 		while(current!=null) {
@@ -135,6 +135,11 @@ public class List {
 	 * Finding the the intersection point of two linked list
 	 * @param node1
 	 * @param node2
+	 * Steps
+	 * Finding the count of each node
+	 * Find the difference
+	 * Move onwards the difference
+	 * 
 	 */
 	public void getIntersectionPoint(Node node1,Node node2){
 	
@@ -145,10 +150,16 @@ public class List {
 	//2. Finding the difference
 	if(node1Count>node2Count) {
 		diff=node1Count-node2Count;
+		//
+		Node current1=node1;
+		for(int i=0;i<diff;i++) {
+			current1=current1.next;
+		}
+		System.out.println("Node1 >>"+current1.data);
 	}else if(node1Count<node2Count){
 		diff=node2Count-node1Count;
 	}
-	Node current1=head;
+/*	Node current1=head;
 	Node current2=head;
 	//3.move onwards the difference
 	for(int i=0;i<diff;i++) {
@@ -162,14 +173,8 @@ public class List {
 		current2=current2.next;
 	}
 		System.out.println("Intersection point not found");
-		
+	*/
+	
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 }
