@@ -176,5 +176,25 @@ public class List {
 	*/
 	
 	}
+	/**
+	 * Function to reverse the linked list
+	 * Steps:
+	 * Using three pointer
+	 */
 	
+	public Node reverse(Node head) {
+		Node prev=null;
+		Node current=head;
+		Node temp=null;
+		while(current!=null) {
+			temp=current.next;
+			current.next=prev;
+			
+			prev=current;
+			current=temp;
+		}
+		head=prev;
+		return head;
+		
+	}
 }
