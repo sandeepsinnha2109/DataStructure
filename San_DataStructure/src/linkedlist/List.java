@@ -176,5 +176,77 @@ public class List {
 	*/
 	
 	}
+	/**
+	 * Function to reverse the linked list
+	 * Steps:
+	 * Using three pointer
+	 */
+	
+	public Node reverse(Node head) {
+		Node prev=null;
+		Node current=head;
+		Node temp=null;
+		while(current!=null) {
+			temp=current.next;
+			current.next=prev;
+			
+			prev=current;
+			current=temp;
+		}
+		head=prev;
+		return head;
+		
+	}
+	
+/**
+ * Rotate Linked List	
+ */
+	
+	public void rotate(int pos) {
+		Node firstPointer=head;
+		Node secondPointer=head;
+		for(int i=0;i<pos;i++) {
+			firstPointer=firstPointer.next;
+		}
+		
+		while(firstPointer.next!=null) {
+			firstPointer=firstPointer.next;
+			secondPointer=secondPointer.next;
+		}
+		firstPointer.next=head;
+		head=secondPointer.next;
+		
+	}	
+/**
+ * Merge two sorted List	
+ */
+	
+	public void merge(Node head1,Node head2) {
+		
+		Node temp=new Node(10);
+		Node temp2=temp;
+		while(true) {
+		if(head1==null) {
+			temp.next=head2;
+			break;
+		}
+		if(head2==null) {
+			temp.next=head1;
+			break;
+		}
+		if(head1.data<=head2.data) {
+			temp.next=head1;
+			head1=head1.next;
+		}else {
+			temp.next=head2;
+			head2=head2.next;
+		}
+		temp=temp.next;
+		
+		//temp2.next=null;
+		}
+		head=temp2.next;
+		
+	}
 	
 }
