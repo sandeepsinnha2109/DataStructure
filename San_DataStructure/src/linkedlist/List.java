@@ -217,6 +217,36 @@ public class List {
 		head=secondPointer.next;
 		
 	}	
+/**
+ * Merge two sorted List	
+ */
 	
+	public void merge(Node head1,Node head2) {
+		
+		Node temp=new Node(10);
+		Node temp2=temp;
+		while(true) {
+		if(head1==null) {
+			temp.next=head2;
+			break;
+		}
+		if(head2==null) {
+			temp.next=head1;
+			break;
+		}
+		if(head1.data<=head2.data) {
+			temp.next=head1;
+			head1=head1.next;
+		}else {
+			temp.next=head2;
+			head2=head2.next;
+		}
+		temp=temp.next;
+		
+		//temp2.next=null;
+		}
+		head=temp2.next;
+		
+	}
 	
 }
