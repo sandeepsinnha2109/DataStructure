@@ -197,4 +197,26 @@ public class List {
 		return head;
 		
 	}
+	
+/**
+ * Rotate Linked List	
+ */
+	
+	public void rotate(int pos) {
+		Node firstPointer=head;
+		Node secondPointer=head;
+		for(int i=0;i<pos;i++) {
+			firstPointer=firstPointer.next;
+		}
+		
+		while(firstPointer.next!=null) {
+			firstPointer=firstPointer.next;
+			secondPointer=secondPointer.next;
+		}
+		firstPointer.next=head;
+		head=secondPointer.next;
+		
+	}	
+	
+	
 }

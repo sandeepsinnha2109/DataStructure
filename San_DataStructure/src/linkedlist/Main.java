@@ -12,6 +12,10 @@ public static void main(String[] args) {
 	l.add(24);
 	l.add(40);
 	l.add(32);
+	l.add(11);
+	l.add(88);
+	l.add(44);
+	l.add(76);
 	l.print();
 	System.out.println("\n ================");
 	System.out.println("Node count ==> "+l.count());
@@ -19,14 +23,11 @@ public static void main(String[] args) {
 	System.out.println("\n ");
 	//l.deleteAtPosition(3);//for Deleting element
 	//l.print();
-	l.getMiddleElement();//For finding middle element
+	//l.getMiddleElement();//For finding middle element
+	l.rotate(3);
+	l.print();
 	
 	
 	
-	//Start :For Intersection point
-	
-	
-	
-    //End :For Intersection point
 }
 }
